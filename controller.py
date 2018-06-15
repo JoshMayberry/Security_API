@@ -2,39 +2,16 @@ __version__ = "1.0.0"
 
 #Import standard elements
 import warnings
-import subprocess
 
-#Import communication elements for talking to other devices such as printers, the internet, a raspberry pi, etc.
-import usb
-import select
-import socket
-import serial
-import netaddr
-import serial.tools.list_ports
-
-#Import barcode software for drawing and decoding barcodes
-import qrcode
-import barcode
+#Import cryptodome to encrypt and decrypt files
+import Cryptodome.Random
+import Cryptodome.Cipher.AES
+import Cryptodome.PublicKey.RSA
+import Cryptodome.Cipher.PKCS1_OAEP
 
 #Required Modules
 ##py -m pip install
-	# pyserial
-	# netaddr
-	# pyusb
-	# pyBarcode
-	# qrcode
-
-##Module dependancies (Install the following .exe and/or .dll files)
-	#"Ghostscript AGPL Release" on "https://ghostscript.com/download/gsdnld.html"
-		#Make sure you install the 32 bit version if you are using 32 bit python
-		#Add the .dll location to your PATH enviroment variable. Mine was at "C:\Program Files (x86)\gs\gs9.20\bin"
-
-	#The latest Windows binary on "https://sourceforge.net/projects/libusb/files/libusb-1.0/libusb-1.0.21/libusb-1.0.21.7z/download"
-		#If on 64-bit Windows, copy "MS64\dll\libusb-1.0.dll" into "C:\windows\system32"
-		#If on 32-bit windows, copy "MS32\dll\libusb-1.0.dll" into "C:\windows\SysWOW64"
-
-#User Access Variables
-ethernetError = socket.error
+	# pycryptodomex
 
 #Controllers
 def build(*args, **kwargs):
